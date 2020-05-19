@@ -1,10 +1,8 @@
 #include "parser.h"
 
 void Parser::input(){
-    if(currToken == Token::Eol)
-        currToken = lexer.getNextToken();
-    
-    //else donothing();
+    stmt_list();
+    opt_eol();
 }
 
 void Parser::stmt_list(){
