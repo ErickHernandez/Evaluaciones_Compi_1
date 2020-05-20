@@ -1,15 +1,15 @@
 Grammar
 =======
 
-input -> stmt_list opt_eol
+input -> (opt_eol)* stmt_list opt_eol (opt_eol)*
 
 opt_eol -> EOL
-         | %epsilon
+        | %epsilon
 
 stmt_list -> stmt (EOL stmt)*
 
 stmt -> assign
-        | PRINT ( expr )
+        | PRINT expr
         | fun_decl
 
 assign -> IDENT = expr
@@ -19,20 +19,18 @@ fun_decl -> IDENT opt_arg_list = expr
 opt_arg_list -> arg_list
                | %epsilon
 
-arg_list -> arg_list arg    <------>  arg_list -> arg (arg)*
-            | arg
+arg_list -> arg (arg)*
+
 
 arg -> NUMBER
       | IDENT
 
-expr ->   expr + term   <------> expr -> term (+ term)*
-        | expr - term                  | term (- term)*
-        | term
+expr ->   term (+ term)*
+        | term (- term)*
 
-term -> term * factor   <------> term -> factor ('*' factor)*
-        | term / factor                | factor (/ factor)*
-        | factor
+term -> factor ('*' factor)*
+        | factor (/ factor)*
 
-factor -> IDENT
+factor -> IDENT opt_arg_list
         | NUMBER
         | ( expr )

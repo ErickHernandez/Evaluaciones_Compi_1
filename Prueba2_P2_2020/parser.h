@@ -12,7 +12,7 @@ public:
         input();
 
 		if(currToken != Token::Eof){
-			std::cerr<<"Syntax Error not EoF Reached. Found token: "<<Lexer::tokenToString(currToken)<<" Lexema: "<<lexer.getText(); // Imprimir numero de linea, columna
+			throw "Syntax Error not EoF Reached";
 		} else {
 			std::cout<<"Perfect Sintax!"<<"\n";
 		}
@@ -20,6 +20,7 @@ public:
 
 private:
 	void input();
+	void inputP();
 	void stmt_list();
 	void opt_eol();
 	void stmt();

@@ -61,16 +61,16 @@ public:
         return tk;
     }
 
-    Token getPrevToken() {
-        Token tk = it->token_id;
-        text = it->token_text;
+    // Token getPrevToken() {
+    //     Token tk = it->token_id;
+    //     text = it->token_text;
         
-        if (it != tklist.begin()) {
-            it--;
-        }
+    //     if (it != tklist.begin()) {
+    //         it--;
+    //     }
         
-        return tk;
-    }
+    //     return tk;
+    // }
     
     bool hasTokens() { return it != tklist.end(); }
     std::string getText() { return text; }

@@ -1,0 +1,4 @@
+/home/alxhdz/Documents/Universidad/Compiladores I/Prueba2_P2_2020/build/CMakeFiles/rebuild_cache.dir
+/home/alxhdz/Documents/Universidad/Compiladores I/Prueba2_P2_2020/build/CMakeFiles/edit_cache.dir
+/home/alxhdz/Documents/Universidad/Compiladores I/Prueba2_P2_2020/build/CMakeFiles/test.dir
+/home/alxhdz/Documents/Universidad/Compiladores I/Prueba2_P2_2020/build/CMakeFiles/test_parser.dir

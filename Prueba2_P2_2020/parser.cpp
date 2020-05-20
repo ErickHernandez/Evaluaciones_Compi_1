@@ -1,10 +1,25 @@
 #include "parser.h"
 
 void Parser::input(){
-    if(currToken == Token::Eol)
-        currToken = lexer.getNextToken();
     
-    //else donothing();
+    while(currToken == Token::Eol){
+        currToken = lexer.getNextToken();
+        opt_eol();
+    }
+
+    stmt_list();
+    opt_eol();
+
+    while(currToken == Token::Eol){
+        currToken = lexer.getNextToken();
+        opt_eol();
+    }
+}
+
+void Parser::opt_eol(){
+    if(currToken == Token::Eol){
+        currToken = lexer.getNextToken();
+    }
 }
 
 void Parser::stmt_list(){
@@ -16,37 +31,21 @@ void Parser::stmt_list(){
     }
 }
 
-void Parser::opt_eol(){
-    if(currToken == Token::Eol){
-        currToken = lexer.getNextToken();
-    }
-}
-
 void Parser::stmt(){
     if(currToken == Token::Ident){
         currToken = lexer.getNextToken();
 
         if(currToken == Token::OpAssign){
-            //currToken == lexer.getPrevToken();
             currToken = lexer.getNextToken();
             assign();
         } else {
             fun_decl();
         }
 
-        assign();
+        //assign();
     } else if(currToken == Token::KwPrint){
         currToken = lexer.getNextToken();
-        if(currToken == Token::OpenPar){
-            currToken == lexer.getNextToken();
-            
-            expr();
-            
-            if(currToken != Token::ClosePar)
-                throw "Syntax Error: Not closing parenthesis found";
-            
-            currToken = lexer.getNextToken();
-        }
+        expr();
     } else {
         throw "Syntax Error. function stmt()";
     }
@@ -57,19 +56,19 @@ void Parser::assign(){
 }
 
 void Parser::fun_decl(){
-    if(currToken == Token::Ident){
-        currToken = lexer.getNextToken();
+    //if(currToken == Token::Ident){
+        //currToken = lexer.getNextToken();
         opt_arg_list();
 
         if(currToken == Token::OpAssign){
             currToken = lexer.getNextToken();
             expr();
         } else {
-            throw "Syntax Error token assign expected";
+            throw "Syntax Error token assign expected. function fun_decl()";
         }
-    } else {
-        throw "Syntax Error. function fun_decl()";
-    }
+    //} else {
+        //throw "Syntax Error. function fun_decl()";
+    //}
 }
 
 void Parser::opt_arg_list(){
@@ -90,9 +89,7 @@ void Parser::arg_list(){
 }
 
 void Parser::arg(){
-    if(currToken == Token::Number){
-        currToken = lexer.getNextToken();
-    } else if(currToken == Token::Ident){
+    if(currToken == Token::Number || currToken == Token::Ident){
         currToken = lexer.getNextToken();
     } else{
         throw "Syntax Error. function: arg";
@@ -102,32 +99,40 @@ void Parser::arg(){
 void Parser::expr(){
     term();
 
-    while(currToken == Token::OpAdd){
-        currToken = lexer.getNextToken();        
-        term();
-    }
 
-    while(currToken == Token::OpSub){
-        currToken = lexer.getNextToken();        
-        term();
+    if(currToken == Token::OpAdd){
+        while(currToken == Token::OpAdd){
+            currToken = lexer.getNextToken();        
+            term();
+        }
+    }else if(currToken == Token::OpSub){
+        while(currToken == Token::OpSub){
+            currToken = lexer.getNextToken();        
+            term();
+        }
     }
 }
 
 void Parser::term(){
     factor();
 
-    while(currToken == Token::OpMul){
-        currToken = lexer.getNextToken();
-        factor();
-    }
-
-    while(currToken == Token::OpDiv){
-        currToken = lexer.getNextToken();
-        factor();
+    if(currToken == Token::OpMul){
+        while(currToken == Token::OpMul){
+            currToken = lexer.getNextToken();        
+            factor();
+        }
+    }else if(currToken == Token::OpDiv){
+        while(currToken == Token::OpDiv){
+            currToken = lexer.getNextToken();        
+            factor();
+        }
     }
 }
 
 void Parser::factor(){
+
+    std::cout<<"factor() token: "<<" "<<lexer.getText()<<"\n";
+
     if(currToken == Token::Number){
         currToken = lexer.getNextToken();
     } else if(currToken == Token::OpenPar){
@@ -140,6 +145,7 @@ void Parser::factor(){
         currToken = lexer.getNextToken();
     } else if(currToken == Token::Ident){
         currToken = lexer.getNextToken();
+        opt_arg_list();
     }else {
         //Error
         throw "Syntax Error. function: factor";

@@ -10,7 +10,7 @@ stmt_list -> stmt_list EOL stmt <------
             | stmt
 
 stmt -> assign
-        | PRINT ( expr )
+        | PRINT expr
         | fun_decl
 
 assign -> IDENT = expr
