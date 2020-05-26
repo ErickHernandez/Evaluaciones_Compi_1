@@ -1,0 +1,33 @@
+#include "spl_lexer.h"
+
+/*!fa2lexer
+
+    %option generate.tokens = false;
+
+    %file "start.jff";
+    %file "identifier.jff";
+    %file "number.jff";
+    %file "operators.jff";
+    %file "relational_op.jff";
+    %file "symbols.jff";
+
+
+    %generate.state_enum(State);
+*/
+
+Symbol SplLexer::getNextToken()
+{
+    text = "";
+    /*!fa2lexer
+
+    %generate.lexer(text);
+    */
+}
+
+const char *SplLexer::tokenToString(Symbol tk)
+{
+    /*!fa2lexer
+    %generate.toString(tk);
+    */
+}
+

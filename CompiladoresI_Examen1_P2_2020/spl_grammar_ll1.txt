@@ -1,0 +1,46 @@
+input -> opt_func_list
+
+opt_func_list -> func_list
+opt_func_list -> ''
+
+func_list -> func_decl func_list'
+func_list' -> func_decl func_list'
+func_list' -> ''
+
+func_decl -> IDENT ( opt_arg_list ) block
+
+opt_arg_list -> arg_list
+opt_arg_list -> ''
+
+arg_list -> IDENT arg_list'
+arg_list' -> , IDENT arg_list'
+arg_list' -> ''
+
+block -> { stmt_list }
+
+stmt_list -> stmt stmt_list'
+stmt_list' -> stmt stmt_listt'
+stmt_listt' -> stmt_list'
+stmt_listt' -> ''
+
+stmt -> IDENT ( expr_list ) ;
+
+stmt2 -> IDENT = expr ;
+
+expr_list -> expr expr_list'
+expr_list' -> expr expr_listt'
+expr_listt' -> expr_list'
+expr_listt' -> ''
+
+expr -> term expr'
+expr' -> + term expr'
+expr' -> ''
+
+term -> factor term'
+term' -> * factor term'
+term' -> ''
+
+factor -> NUMBER
+factor -> IDENT
+factor2 -> IDENT ( expr_list )
+factor -> ( expr )

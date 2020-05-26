@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/CompiladoresI_Examen1_P2_2020/build/spl_lexer.cpp
+spl_lexer.h
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/CompiladoresI_Examen1_P2_2020/build/spl_lexer.h
+
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/CompiladoresI_Examen1_P2_2020/spl_lexer.h
+spl_symbols.h
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/CompiladoresI_Examen1_P2_2020/spl_symbols.h
+iostream
+-
+string
+-
+fstream
+-
+
+spl_symbols.h
+vector
+-
+

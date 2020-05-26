@@ -1,0 +1,7 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}/Parser/tests",
+    "files.associations": {
+        "*.txt": "c",
+        "iosfwd": "cpp"
+    }
+}

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>
+	<type>fa</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="q0">
+			<x>94.0</x>
+			<y>225.0</y>
+			<initial/>
+		</state>
+		<state id="1" name="q1">
+			<x>287.0</x>
+			<y>43.0</y>
+		</state>
+		<state id="2" name="q2">
+			<x>287.0</x>
+			<y>104.0</y>
+		</state>
+		<state id="3" name="q3">
+			<x>291.0</x>
+			<y>219.0</y>
+		</state>
+		<state id="4" name="q4">
+			<x>409.0</x>
+			<y>217.0</y>
+			<label>Symbol::SEMICOLON</label>
+			<final/>
+		</state>
+		<state id="8" name="q8">
+			<x>387.0</x>
+			<y>42.0</y>
+			<label>Symbol::OPEN_PARENTHESIS</label>
+			<final/>
+		</state>
+		<state id="9" name="q9">
+			<x>389.0</x>
+			<y>105.0</y>
+			<label>Symbol::CLOSE_PARENTHESIS</label>
+			<final/>
+		</state>
+		<state id="15" name="q15">
+			<x>312.0</x>
+			<y>326.0</y>
+		</state>
+		<state id="16" name="q16">
+			<x>411.0</x>
+			<y>328.0</y>
+			<label>Symbol::COMMA</label>
+			<final/>
+		</state>
+		<state id="17" name="q17">
+			<x>310.0</x>
+			<y>404.0</y>
+		</state>
+		<state id="18" name="q18">
+			<x>421.0</x>
+			<y>405.0</y>
+		</state>
+		<state id="19" name="q19">
+			<x>421.0</x>
+			<y>405.0</y>
+			<label>Symbol::OPEN_BRACE</label>
+			<final/>
+		</state>
+		<state id="20" name="q20">
+			<x>304.0</x>
+			<y>469.0</y>
+		</state>
+		<state id="21" name="q21">
+			<x>425.0</x>
+			<y>468.0</y>
+			<label>Symbol::CLOSE_BRACE</label>
+			<final/>
+		</state>
+		<!--The list of transitions.-->
+		<transition>
+			<from>2</from>
+			<to>9</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>20</to>
+			<read>}</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>8</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>(</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>17</to>
+			<read>{</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>3</to>
+			<read>;</read>
+		</transition>
+		<transition>
+			<from>20</from>
+			<to>21</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>15</to>
+			<read>,</read>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>4</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>15</from>
+			<to>16</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>2</to>
+			<read>)</read>
+		</transition>
+		<transition>
+			<from>17</from>
+			<to>19</to>
+			<read/>
+		</transition>
+		<note>
+			<text>Name: symbols</text>
+			<x>53.0</x>
+			<y>31.0</y>
+		</note>
+	</automaton>
+</structure>
