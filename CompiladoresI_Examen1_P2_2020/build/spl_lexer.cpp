@@ -31,17 +31,13 @@ Symbol SplLexer::getNextToken()
         switch (state) {
             // start
             case State::start_q0:
-                if (ch == EOF) {
-                    text += ch;
-                    return Symbol::Eof;
-                }
-                else if ((ch == ' ') || (ch == '\t')) {
+                if ((ch == '\n') || (ch == ' ') || (ch == '\t')) {
                     state = State::start_q0;
                     ch = getNextChar();
                 }
-                else if (ch == '\n') {
+                else if (ch == EOF) {
                     text += ch;
-                    return Symbol::EoL;
+                    return Symbol::Eof;
                 }
                 else {
                     // Trying next automaton 'identifier
@@ -208,10 +204,9 @@ const char *SplLexer::tokenToString(Symbol tk)
         case Symbol::SEMICOLON: return "SEMICOLON";
         case Symbol::OPEN_BRACE: return "OPEN_BRACE";
         case Symbol::OPEN_PARENTHESIS: return "OPEN_PARENTHESIS";
-        case Symbol::EoL: return "EoL";
-        case Symbol::Eof: return "Eof";
         case Symbol::CLOSE_BRACE: return "CLOSE_BRACE";
         case Symbol::IDENT: return "IDENT";
+        case Symbol::Eof: return "Eof";
         case Symbol::CLOSE_PARENTHESIS: return "CLOSE_PARENTHESIS";
         case Symbol::PLUS: return "PLUS";
         case Symbol::NUMBER: return "NUMBER";

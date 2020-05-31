@@ -19,18 +19,16 @@ arg_list' -> ''
 block -> { stmt_list }
 
 stmt_list -> stmt stmt_list'
-stmt_list' -> stmt stmt_listt'
-stmt_listt' -> stmt_list'
-stmt_listt' -> ''
+stmt_list' -> stmt stmt_list'
+stmt_list' -> ''
 
-stmt -> IDENT ( expr_list ) ;
-
-stmt2 -> IDENT = expr ;
+stmt -> IDENT stmt'
+stmt' -> = expr ;
+stmt' -> ( expr_list ) ;
 
 expr_list -> expr expr_list'
-expr_list' -> expr expr_listt'
-expr_listt' -> expr_list'
-expr_listt' -> ''
+expr_list' -> , expr expr_list'
+expr_list' -> ''
 
 expr -> term expr'
 expr' -> + term expr'
@@ -41,6 +39,7 @@ term' -> * factor term'
 term' -> ''
 
 factor -> NUMBER
-factor -> IDENT
-factor2 -> IDENT ( expr_list )
+factor -> IDENT factor'
 factor -> ( expr )
+factor' -> ( expr_list )
+factor' -> ''

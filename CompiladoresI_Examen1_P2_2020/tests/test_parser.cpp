@@ -44,8 +44,10 @@ bool throwOnError() {
     bool throwException = false;
     try {
         p.parse();
+        std::cout<<"it was false"<<"\n";
     } catch (...) {
         throwException = true;
+        std::cout<<"it was true"<<"\n";
     }
     return throwException;
 }

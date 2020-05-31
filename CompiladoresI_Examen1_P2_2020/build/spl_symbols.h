@@ -16,30 +16,28 @@ enum class Symbol: unsigned {
     stmt_list = 9,
     stmt = 10,
     stmt_listPrime = 11,
-    stmt_listtPrime = 12,
-    expr_list = 13,
-    stmt2 = 14,
-    expr = 15,
-    expr_listPrime = 16,
-    expr_listtPrime = 17,
-    term = 18,
-    exprPrime = 19,
-    factor = 20,
-    termPrime = 21,
-    factor2 = 22,
-    Eof = 23,
-    IDENT = 24,
-    OPEN_PARENTHESIS = 25,
-    CLOSE_PARENTHESIS = 26,
-    COMMA = 27,
-    OPEN_BRACE = 28,
-    CLOSE_BRACE = 29,
-    SEMICOLON = 30,
-    EQUAL = 31,
-    PLUS = 32,
-    ASTERISK = 33,
-    NUMBER = 34,
-    Epsilon = 35
+    stmtPrime = 12,
+    expr = 13,
+    expr_list = 14,
+    expr_listPrime = 15,
+    term = 16,
+    exprPrime = 17,
+    factor = 18,
+    termPrime = 19,
+    factorPrime = 20,
+    Eof = 21,
+    IDENT = 22,
+    OPEN_PARENTHESIS = 23,
+    CLOSE_PARENTHESIS = 24,
+    COMMA = 25,
+    OPEN_BRACE = 26,
+    CLOSE_BRACE = 27,
+    EQUAL = 28,
+    SEMICOLON = 29,
+    PLUS = 30,
+    ASTERISK = 31,
+    NUMBER = 32,
+    Epsilon = 33
 };
 
 struct Rule {
@@ -55,12 +53,12 @@ using RuleRef = std::reference_wrapper<Rule>;
 
 static inline unsigned indexOf(Symbol s) {
     unsigned index = static_cast<unsigned>(s);
-    if (index < 23) return index;
-    else return (index - 23);
+    if (index < 21) return index;
+    else return (index - 21);
 }
 
 static inline bool isTerminal(Symbol s) {
-    return static_cast<unsigned>(s) >= 23;
+    return static_cast<unsigned>(s) >= 21;
 }
 
 const Rule& getEntry(Symbol non_term, Symbol term);

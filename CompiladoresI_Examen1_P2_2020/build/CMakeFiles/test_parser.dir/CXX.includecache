@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/CompiladoresI_Examen1_P2_2020/build/spl_lexer.cpp
-spl_lexer.h
-/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/CompiladoresI_Examen1_P2_2020/build/spl_lexer.h
-
 /home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/CompiladoresI_Examen1_P2_2020/spl_lexer.h
 spl_symbols.h
 /home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/CompiladoresI_Examen1_P2_2020/spl_symbols.h
@@ -18,6 +14,16 @@ iostream
 string
 -
 fstream
+-
+
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/CompiladoresI_Examen1_P2_2020/spl_parser.cpp
+spl_parser.h
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/CompiladoresI_Examen1_P2_2020/spl_parser.h
+
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/CompiladoresI_Examen1_P2_2020/spl_parser.h
+spl_lexer.h
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/CompiladoresI_Examen1_P2_2020/spl_lexer.h
+stack
 -
 
 spl_symbols.h

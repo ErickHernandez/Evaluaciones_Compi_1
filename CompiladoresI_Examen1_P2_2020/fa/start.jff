@@ -13,13 +13,12 @@
 			<label>Symbol::Eof</label>
 			<final/>
 		</state>
-		<state id="2" name="q2">
-			<x>224.0</x>
-			<y>84.0</y>
-			<label>Symbol::EoL</label>
-			<final/>
-		</state>
 		<!--The list of transitions.-->
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>-EOL</read>
+		</transition>
 		<transition>
 			<from>0</from>
 			<to>1</to>
@@ -34,11 +33,6 @@
 			<from>0</from>
 			<to>0</to>
 			<read>-TAB</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>2</to>
-			<read>EOL</read>
 		</transition>
 		<note>
 			<text>Name:start</text>
