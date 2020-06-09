@@ -1,0 +1,134 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/build/expr_slr_table.cpp
+vector
+-
+functional
+-
+expr_slr_table.h
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/build/expr_slr_table.h
+
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/build/expr_slr_table.h
+vector
+-
+
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/expr_lexer.cpp
+expr_lexer.h
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/expr_lexer.h
+
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/expr_lexer.h
+iostream
+-
+fstream
+-
+string
+-
+vector
+-
+expr_slr_table.h
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/expr_slr_table.h
+
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/expr_parser.cpp
+expr_parser.h
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/expr_parser.h
+iostream
+-
+string
+-
+
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/expr_parser.h
+expr_lexer.h
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/expr_lexer.h
+stack
+-
+
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/tests/doctest.h
+ciso646
+-
+iosfwd
+-
+iosfwd
+-
+cstddef
+-
+type_traits
+-
+doctest_fwd.h
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/tests/doctest_fwd.h
+ctime
+-
+cmath
+-
+math.h
+-
+new
+-
+cstdio
+-
+cstdlib
+-
+cstring
+-
+limits
+-
+utility
+-
+sstream
+-
+iostream
+-
+algorithm
+-
+iomanip
+-
+vector
+-
+set
+-
+exception
+-
+stdexcept
+-
+csignal
+-
+cfloat
+-
+cctype
+-
+stdint.h
+-
+unistd.h
+-
+AfxWin.h
+-
+windows.h
+-
+io.h
+-
+sys/time.h
+-
+sys/types.h
+-
+unistd.h
+-
+sys/sysctl.h
+-
+
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/tests/test_parser.cpp
+doctest.h
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/tests/doctest.h
+expr_lexer.h
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/tests/expr_lexer.h
+expr_parser.h
+/home/alxhdz/Documents/Universidad/Compiladores I/Evaluaciones_Compi_1/Prueba3_P2_2020/tests/expr_parser.h
+
+expr_slr_table.h
+vector
+-
+

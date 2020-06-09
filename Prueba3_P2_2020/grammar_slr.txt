@@ -1,0 +1,39 @@
+input -> stmt_list
+
+stmt_list -> stmt_list opt_stmt
+stmt_list -> opt_stmt
+
+opt_stmt -> opt_eol
+opt_stmt -> stmt
+
+stmt -> assign
+stmt -> KwPrint expr
+stmt -> fun_decl
+
+opt_eol -> opt_eol Eol
+opt_eol -> Eol
+
+assign -> Ident OpAssign expr
+
+fun_decl -> Ident arg_list OpAssign expr
+
+arg_list -> arg_list Comma arg
+arg_list -> arg
+
+arg -> Number
+arg -> Ident
+
+expr -> expr OpAdd term
+expr -> expr OpSub term
+expr -> term
+
+term -> term OpMul factor
+term -> term OpDiv factor
+term -> factor
+
+factor -> Ident opt_arg_list
+factor -> Number
+factor -> OpenPar expr ClosePar
+
+opt_arg_list -> arg_list
+opt_arg_list -> %epsilon
